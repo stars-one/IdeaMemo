@@ -13,23 +13,18 @@
     <img src="https://s21.ax1x.com/2025/02/15/pEK8yDS.png" width="32.2%" alt="" />
 </div>
 
-## Features
+## Main Features
 
 **IdeaMemo** is an Android lightweight note-taking app.
 
 Here are the current features:
 
-- Written in Jetpack Compose and Kotlin.
-- Centered around indexing with tags (Tag).
-- Supports Markdown rendering and display.
-- Supports images.
-- Supports calendar view.
-- Supports heat map statistics.
-- Local data backup and recovery.
-- Webdav cloud data backup and recovery.
-- Export data in Json and Txt formats.
-- Supports English.
-- Supports fingerprint unlock and encryption.
+- **Privacy First** : No need to apply any permissions, all runtime data is firmly stored in your local database or can be uploaded to your own WEBDAV private cloud.
+- **Simplicity and cleanliness** : Indexed by #TAG , it supports mixed text and graphics to record and organize your sudden inspirations. But as a card note, it is not recommended to record too long text.
+- **Review at any time** : Support calendar view, heatmap and random walk to review your notes.
+- **Code Open Source** : All code is open source on Github, you can view and collaborate on development at any time.
+- **Free to use** : Enjoy all features completely free of charge with no content fees.
+- **Continuously Updated** : IdeaMemo is always in use by itself and will be continuously updated.
 - ...
 
 ## TODO
@@ -53,6 +48,7 @@ I'll gradually improve it, but the power of one person is limited. Pull requests
 - [MoeMemosAndroid](https://github.com/mudkipme/MoeMemosAndroid)
 - [Animius](https://github.com/lanlinju/Animius)
 - [SaltUI](https://github.com/Moriafly/SaltUI)
+- [memos](https://github.com/usememos/memos)
 - ...
 
 ## License
