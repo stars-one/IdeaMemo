@@ -17,35 +17,39 @@
 
 数据存储在您的手机，也可以通过 Webdav 上传到自己私有云存储，App使用不需要申请任何的权限。
 
-以下是当前功能和未来计划：
+以下是当前功能：
 
-- [x] 纯用 Compose 和 Kotlin 编写。
-- [x] 支持 Markdown 书写。
-- [x] 支持图片。
-- [x] 支持 TAG 标签关联。
-- [x] 支持主题和颜色。
-- [x] 本地数据备份和恢复。
-- [x] 以 JSON 格式导出。
-- [x] Webdav 云数据备份和恢复。
-- [x] 完成英文翻译。
+-  使用Jetpack Compose 和 Kotlin 编写。
+- 以标签 Tag 为核心进行索引。
+- 支持 Markdown 渲染展示。
+- 支持图片。
+- 支持日历视图。
+- 支持热力图统计。
+- 本地数据备份和恢复。
+- Webdav 云数据备份和恢复。
+- 导出数据为 Json 和 Txt 格式。
+- 适配英文。
+- 支持指纹解锁和加密。
 - ...
 
 ## ToDo
 [App后续版本已经迭代计划](https://github.com/ldlywt/IdeaMemo/issues/2)
 
-## Acknowledgments
+## 鸣谢
 
 该项目由 Compose 创建。该项目的部分代码源自优秀的开源项目。
 
 我会逐步完善它，但一个人的力量是有限的。欢迎提交 Pull 请求。
 
-### Open Source Projects
+**Open Source Projects**
 
 - [ReadYou](https://github.com/Ashinch/ReadYou)
 - [MoeMemosAndroid](https://github.com/mudkipme/MoeMemosAndroid)
+- [Animius](https://github.com/lanlinju/Animius)
+- [SaltUI](https://github.com/Moriafly/SaltUI)
 - ...
 
-## ⚠️ License
+## License
 GNU GPL v3.0 © [IdeaMemo](https://github.com/ldlywt/IdeaMemo/blob/master/LICENSE)
 
 
