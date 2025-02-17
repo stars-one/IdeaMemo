@@ -38,6 +38,14 @@ This project was created by Compose. Some of the project's code is derived from 
 
 I'll gradually improve it, but the power of one person is limited. Pull requests are welcome.
 
+## Installation
+
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
+     alt="Get it on Google Play"
+     height="80">](https://play.google.com/store/apps/details?id=com.ldlywt.note)
+[<img src="https://s1.ax1x.com/2023/01/12/pSu1a36.png" alt="Get it on GitHub" height="80">](https://github.com/ldlywt/IdeaMemo/releases/latest)     
+
+
 ### Open Source Projects
 
 - [ReadYou](https://github.com/Ashinch/ReadYou)
