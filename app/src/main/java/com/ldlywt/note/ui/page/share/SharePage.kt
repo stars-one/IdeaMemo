@@ -98,15 +98,15 @@ fun SharePage(noteId: Long, navController: NavHostController) {
                                     .padding(12.dp)
                             ) {
                                 val note = it.note
-                                if (!note.noteTitle.isNullOrEmpty()) {
-                                    Text(
-                                        text = note.noteTitle ?: "",
-                                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.SemiBold),
-                                        color = MaterialTheme.colorScheme.primary,
-                                    )
-                                    Spacer(modifier = Modifier.height(4.dp))
-                                }
-                                MarkdownText(markdown = note.content, style = SaltTheme.textStyles.paragraph.copy(fontSize = 15.sp, lineHeight = 24.sp))
+//                                if (!note.noteTitle.isNullOrEmpty()) {
+//                                    Text(
+//                                        text = note.noteTitle ?: "",
+//                                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.SemiBold),
+//                                        color = MaterialTheme.colorScheme.primary,
+//                                    )
+//                                    Spacer(modifier = Modifier.height(4.dp))
+//                                }
+                                MarkdownText(markdown = note.content, style = SaltTheme.textStyles.paragraph.copy(fontSize = 15.sp, lineHeight = 24.sp)){}
                                 if (note.attachments.isNotEmpty()) {
                                     Spacer(modifier = Modifier.height(8.dp))
                                     ImageCard(note, null)

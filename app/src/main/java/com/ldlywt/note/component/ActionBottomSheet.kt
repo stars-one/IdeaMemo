@@ -1,5 +1,6 @@
 package com.ldlywt.note.component
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
@@ -26,6 +27,7 @@ import com.ldlywt.note.ui.page.router.Screen
 import com.ldlywt.note.utils.copy
 import com.ldlywt.note.utils.str
 import com.ldlywt.note.ui.page.LocalMemosViewModel
+import com.moriafly.salt.ui.SaltTheme
 import kotlinx.coroutines.launch
 
 
@@ -37,20 +39,21 @@ fun ActionBottomSheet(
 
     val viewModel = LocalMemosViewModel.current
     val skipPartiallyExpanded by remember { mutableStateOf(false) }
-    val edgeToEdgeEnabled by remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
-    val context = LocalContext.current
     val bottomSheetState = rememberModalBottomSheetState(
         skipPartiallyExpanded = skipPartiallyExpanded
     )
 
     // Sheet content
     if (show) {
-        val windowInsets = if (edgeToEdgeEnabled) WindowInsets(0) else BottomSheetDefaults.windowInsets
         ModalBottomSheet(
+            containerColor = SaltTheme.colors.popup,
             onDismissRequest = onDismissRequest, sheetState = bottomSheetState
         ) {
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+            Row(
+                Modifier
+                    .fillMaxWidth(), horizontalArrangement = Arrangement.Center
+            ) {
                 LazyColumn {
 //                    item {
 //                        TextButton(onClick = { /*TODO*/ }, modifier = Modifier.fillMaxWidth()) {
@@ -63,7 +66,7 @@ fun ActionBottomSheet(
                             copy(noteShowBean.note)
                             onDismissRequest()
                         }, modifier = Modifier.fillMaxWidth()) {
-                            Text(text = R.string.copy.str, style = MaterialTheme.typography.titleMedium)
+                            Text(text = R.string.copy.str, style = SaltTheme.textStyles.paragraph)
                         }
                     }
 
@@ -73,7 +76,7 @@ fun ActionBottomSheet(
                             navHostController.navigate(route = Screen.InputDetail(noteShowBean.note.noteId))
                             onDismissRequest()
                         }, modifier = Modifier.fillMaxWidth()) {
-                            Text(text = R.string.edit.str, style = MaterialTheme.typography.titleMedium)
+                            Text(text = R.string.edit.str, style = SaltTheme.textStyles.paragraph)
                         }
                     }
 
@@ -82,7 +85,7 @@ fun ActionBottomSheet(
                             navHostController.navigate(Screen.Share(noteShowBean.note.noteId))
                             onDismissRequest()
                         }, modifier = Modifier.fillMaxWidth()) {
-                            Text(text = R.string.share.str, style = MaterialTheme.typography.titleMedium)
+                            Text(text = R.string.share.str, style = SaltTheme.textStyles.paragraph)
                         }
                     }
 
@@ -93,7 +96,7 @@ fun ActionBottomSheet(
                                 onDismissRequest()
                             }
                         }, modifier = Modifier.fillMaxWidth()) {
-                            Text(text = R.string.delete.str, style = MaterialTheme.typography.titleMedium)
+                            Text(text = R.string.delete.str, style = SaltTheme.textStyles.paragraph)
                         }
                     }
                 }

@@ -119,6 +119,7 @@ fun AllNotesPage(
 
             if (showInputDialog) {
                 BackHandler(enabled = true) {
+                    hideBottomNavBar.invoke(false)
                     showInputDialog = false
                 }
             }

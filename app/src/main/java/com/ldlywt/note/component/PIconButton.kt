@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.dp
+import com.moriafly.salt.ui.SaltTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -21,9 +22,9 @@ fun PIconButton(
     containerModifier: Modifier = Modifier,
     imageVector: ImageVector,
     contentDescription: String?,
-    tint: Color = LocalContentColor.current,
+    tint: Color = SaltTheme.colors.text,
     showBadge: Boolean = false,
-    badgeColor: Color = MaterialTheme.colorScheme.primary,
+    badgeColor: Color = SaltTheme.colors.stroke,
     isHaptic: Boolean? = false,
     isSound: Boolean? = false,
     onClick: () -> Unit = {},
@@ -43,10 +44,10 @@ fun PIconButton(
                 badge = {
                     Badge(
                         modifier =
-                            Modifier
-                                .size(8.dp)
-                                .offset(x = (-1).dp, y = 0.dp)
-                                .clip(CircleShape),
+                        Modifier
+                            .size(8.dp)
+                            .offset(x = (-1).dp, y = 0.dp)
+                            .clip(CircleShape),
                         containerColor = badgeColor,
                     )
                 },

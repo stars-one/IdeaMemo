@@ -140,7 +140,6 @@ fun ChatInput(
             PIconButton(
                 imageVector = Icons.Filled.Tag,
                 contentDescription = stringResource(R.string.tag),
-                tint = MaterialTheme.colorScheme.primary,
             ) {
                 text = text.copy(
                     text.text.replaceRange(text.selection.min, text.selection.max, "#"), TextRange(text.selection.min + 1)
@@ -169,7 +168,6 @@ fun ChatInput(
                 PIconButton(
                     imageVector = Icons.Outlined.Tag,
                     contentDescription = stringResource(R.string.tag),
-                    tint = MaterialTheme.colorScheme.primary,
                 ) {
                     tagMenuExpanded = !tagMenuExpanded
                 }
@@ -183,7 +181,6 @@ fun ChatInput(
             PIconButton(
                 imageVector = Icons.Filled.AddLocation,
                 contentDescription = stringResource(R.string.location),
-                tint = MaterialTheme.colorScheme.primary,
             ) {
                 text = text.copy(
                     text.text.replaceRange(text.selection.min, text.selection.max, "@"), TextRange(text.selection.min + 1)
@@ -212,7 +209,6 @@ fun ChatInput(
                 PIconButton(
                     imageVector = Icons.Filled.AddLocation,
                     contentDescription = stringResource(R.string.location),
-                    tint = MaterialTheme.colorScheme.primary,
                 ) {
                     locationMenuExpanded = !locationMenuExpanded
                 }
@@ -239,6 +235,7 @@ fun ChatInput(
                 OutlinedTextField(
                     value = text,
                     minLines = 5,
+                    textStyle = SaltTheme.textStyles.paragraph,
                     onValueChange = { it: TextFieldValue ->
                         text = it
                     },
@@ -278,14 +275,12 @@ fun ChatInput(
                     PIconButton(
                         imageVector = Icons.Outlined.Image,
                         contentDescription = stringResource(R.string.add_image),
-                        tint = MaterialTheme.colorScheme.primary,
                     ) {
                         pickImage.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
                     }
                     PIconButton(
                         imageVector = Icons.Outlined.PhotoCamera,
                         contentDescription = stringResource(R.string.take_photo),
-                        tint = MaterialTheme.colorScheme.primary,
                     ) {
                         try {
                             val imagesFolder = File(context.cacheDir, "capture_picture")
@@ -305,7 +300,6 @@ fun ChatInput(
                     PIconButton(
                         imageVector = Icons.Outlined.Send,
                         contentDescription = stringResource(R.string.send),
-                        tint = MaterialTheme.colorScheme.primary,
                     ) {
                         submit()
                     }
