@@ -50,6 +50,8 @@ I'll gradually improve it, but the power of one person is limited. Pull requests
 
 - [ReadYou](https://github.com/Ashinch/ReadYou)
 - [MoeMemosAndroid](https://github.com/mudkipme/MoeMemosAndroid)
+- [Animius](https://github.com/lanlinju/Animius)
+- [SaltUI](https://github.com/Moriafly/SaltUI)
 - ...
 
 ## ⚠️ License
