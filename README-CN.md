@@ -2,7 +2,7 @@
 
 <div align="center">
     <h1>IdeaMemo</h1>
-    <p>一个用 Jetpack Compose 编写的快速记录应用。</p>
+    <p>一个用 Jetpack Compose 编写的快速记录应用，数据存在本地或者Webdav。</p>
     <a href="https://imgse.com/i/pEK8AXT"><img src="https://s21.ax1x.com/2025/02/15/pEK8AXT.md.jpg" alt="pEK8AXT.jpg" border="0" /></a>
     <br/>
     <br/>
@@ -13,7 +13,11 @@
 
 ## Features
 
-**IdeaMemo** 是一款 Android 轻量级笔记应用。以下是当前功能和未来计划：
+**IdeaMemo** 是一款 Android 轻量级以及标签 Tag 为核心的卡片便签App。
+
+数据存储在您的手机，也可以通过 Webdav 上传到自己私有云存储，App使用不需要申请任何的权限。
+
+以下是当前功能和未来计划：
 
 - [x] 纯用 Compose 和 Kotlin 编写。
 - [x] 支持 Markdown 书写。
@@ -23,14 +27,11 @@
 - [x] 本地数据备份和恢复。
 - [x] 以 JSON 格式导出。
 - [x] Webdav 云数据备份和恢复。
-- [x] 修复标签和注释之间的关系。
 - [x] 完成英文翻译。
 - ...
 
-# Todo
-- [ ] KMP跨平台方案.
-- [ ] 添加更多功能.
-- [ ] BugFix.
+## ToDo
+[App后续版本已经迭代计划](https://github.com/ldlywt/IdeaMemo/issues/2)
 
 ## Acknowledgments
 
@@ -45,23 +46,11 @@
 - ...
 
 ## ⚠️ License
-    IdeaMemo
-
-    Copyright (c)2025 ldlywt
-    
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-    
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-    GNU General Public License for more details.
-    
-    The above copyright notice, this permission notice, and its license shall be included in all copies or substantial portions of the Software.
-    
-    You can find a copy of the GNU General Public License v3 [here](https://www.gnu.org/licenses/)
+GNU GPL v3.0 © [IdeaMemo](https://github.com/ldlywt/IdeaMemo/blob/master/LICENSE)
 
 
-请考虑给我一颗星；它让生活变得更美好。**🌟**
+您的star是我最大的动力，谢谢！ **🌟**
+
+## Star History
+
+[![Star History Chart]( https://api.star-history.com/svg?repos=ldlywt/IdeaMemo&type=Date)]( https://star-history.com/#ldlywt/IdeaMemo&Date)
