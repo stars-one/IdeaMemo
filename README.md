@@ -15,28 +15,25 @@
 
 ## Features
 
-**IdeaMemo** is an Android lightweight note-taking app. Here are the current features and future plans:
+**IdeaMemo** is an Android lightweight note-taking app.
 
-- [x]  Written purely in Compose and Kotlin, adhering to Material You design.
-- [x]  Supports Markdown writing.
-- [x]  Supports images.
-- [x]  Supports TAG label associations.
-- [x]  Supports theme.
-- [x]  Local data backup and restore.
-- [x]  Export in JSON format.
-- [x]  Webdav Cloud data backup and restore.
-- [x]  Fix relationships between tags and notes.
-- [x]  Complete English translation.
+Here are the current features:
+
+- Written in Jetpack Compose and Kotlin.
+- Centered around indexing with tags (Tag).
+- Supports Markdown rendering and display.
+- Supports images.
+- Supports calendar view.
+- Supports heat map statistics.
+- Local data backup and recovery.
+- Webdav cloud data backup and recovery.
+- Export data in Json and Txt formats.
+- Supports English.
+- Supports fingerprint unlock and encryption.
 - ...
 
 ## TODO
 [App Subsequent Iteration Plan](https://github.com/ldlywt/IdeaMemo/issues/2)
-
-## Acknowledgments
-
-This project was created by Compose. Some of the project's code is derived from excellent open-source projects.
-
-I'll gradually improve it, but the power of one person is limited. Pull requests are welcome.
 
 ## Installation
 
@@ -45,8 +42,12 @@ I'll gradually improve it, but the power of one person is limited. Pull requests
      height="80">](https://play.google.com/store/apps/details?id=com.ldlywt.note)
 [<img src="https://s1.ax1x.com/2023/01/12/pSu1a36.png" alt="Get it on GitHub" height="80">](https://github.com/ldlywt/IdeaMemo/releases/latest)     
 
+## Thanks
+This project was created by Compose. Some of the project's code is derived from excellent open-source projects.
 
-### Open Source Projects
+I'll gradually improve it, but the power of one person is limited. Pull requests are welcome.
+
+**Open Source Projects**
 
 - [ReadYou](https://github.com/Ashinch/ReadYou)
 - [MoeMemosAndroid](https://github.com/mudkipme/MoeMemosAndroid)
@@ -54,7 +55,7 @@ I'll gradually improve it, but the power of one person is limited. Pull requests
 - [SaltUI](https://github.com/Moriafly/SaltUI)
 - ...
 
-## ⚠️ License
+## License
 GNU GPL v3.0 © [IdeaMemo](https://github.com/ldlywt/IdeaMemo/blob/master/LICENSE)
 
 Your star is my biggest motivation! **🌟**
