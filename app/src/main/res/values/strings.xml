@@ -4,7 +4,7 @@
     <string name="cancel">Cancel</string>
     <string name="explore">Explore</string>
     <string name="search_hint">Search</string>
-    <string name="welcome">Welcome to</string>
+    <string name="welcome">Welcome</string>
     <string name="agree">Agree</string>
     <string name="ok">OK</string>
     <string name="app_restored">App data has been restored. You need to restart the app.</string>
@@ -50,8 +50,8 @@
     <string name="gallery">Gallery</string>
     <string name="random_walk">Random</string>
     <string name="tos_tips">Before doing so, please read and agree to the Terms of Service and Privacy Policy.</string>
-    <string name="browse_tos_tips_service">Browse the &lt;i&gt;&lt;u&gt;Terms of Service&lt;/u&gt;&lt;/i&gt;</string>
-    <string name="browse_tos_tips_privacy">Browse the &lt;i&gt;&lt;u&gt;Privacy Policy&lt;/u&gt;&lt;/i&gt;</string>
+    <string name="browse_tos_tips_service">Terms of Service</string>
+    <string name="browse_tos_tips_privacy">Privacy Policy</string>
     <string name="back">Back</string>
     <string name="password">Password</string>
     <string name="clear">Clear</string>
@@ -97,4 +97,5 @@
     <string name="safe">Safe And Data</string>
     <string name="sure">Sure</string>
     <string name="share_app">Share App</string>
+    <string name="exit">Exit</string>
 </resources>

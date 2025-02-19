@@ -11,19 +11,18 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.ldlywt.note.biometric.AppBioMetricManager
 import com.ldlywt.note.state.NoteState
-import com.ldlywt.note.ui.page.router.App
-import com.ldlywt.note.utils.FirstTimeManager
 import com.ldlywt.note.ui.page.LocalMemosState
 import com.ldlywt.note.ui.page.LocalMemosViewModel
 import com.ldlywt.note.ui.page.LocalTags
 import com.ldlywt.note.ui.page.NoteViewModel
+import com.ldlywt.note.ui.page.router.App
+import com.ldlywt.note.utils.FirstTimeManager
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -36,7 +35,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var firstTimeManager: FirstTimeManager
 
     private val viewModel: MainViewModel by viewModels()
-    private val noteViewModel: NoteViewModel by viewModels()
 
     @Inject
     lateinit var appBioMetricManager: AppBioMetricManager

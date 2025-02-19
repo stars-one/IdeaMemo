@@ -3,15 +3,17 @@
 package com.ldlywt.note.ui.page.settings
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import com.ldlywt.note.utils.toYYMMDD
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
@@ -49,17 +51,16 @@ import androidx.navigation.NavHostController
 import com.google.android.material.color.DynamicColors
 import com.ldlywt.note.R
 import com.ldlywt.note.component.ItemPopup
-import com.ldlywt.note.component.RYScaffold
-import com.ldlywt.note.utils.lunchIo
-import com.ldlywt.note.utils.lunchMain
 import com.ldlywt.note.ui.page.LocalMemosState
 import com.ldlywt.note.ui.page.LocalTags
 import com.ldlywt.note.ui.page.data.DataManagerViewModel
-import com.ldlywt.note.ui.page.home.FirstTimeWarmDialog
 import com.ldlywt.note.ui.page.main.MainActivity
 import com.ldlywt.note.ui.page.router.Screen
 import com.ldlywt.note.utils.SettingsPreferences
+import com.ldlywt.note.utils.TipsDialog
+import com.ldlywt.note.utils.lunchIo
 import com.ldlywt.note.utils.str
+import com.ldlywt.note.utils.toYYMMDD
 import com.ldlywt.note.utils.toast
 import com.moriafly.salt.ui.Item
 import com.moriafly.salt.ui.ItemSwitcher
@@ -70,15 +71,18 @@ import com.moriafly.salt.ui.UnstableSaltApi
 import com.moriafly.salt.ui.popup.PopupMenuItem
 import com.moriafly.salt.ui.popup.rememberPopupState
 import kotlinx.coroutines.launch
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.statusBarsPadding
 
 
 @Composable
 fun SettingsPage(
     navController: NavHostController
 ) {
-    Column(modifier = Modifier.fillMaxSize().statusBarsPadding()) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(SaltTheme.colors.background)
+            .statusBarsPadding()
+    ) {
         Spacer(modifier = Modifier.height(12.dp))
         Column {
             Text(
@@ -269,11 +273,7 @@ fun SettingsPreferenceScreen(navController: NavHostController) {
         })
 
     if (showWarnDialog) {
-        FirstTimeWarmDialog {
-            lunchMain {
-                showWarnDialog = false
-            }
-        }
+        TipsDialog(block = { showWarnDialog = false })
     }
 }
 
@@ -293,7 +293,7 @@ fun SettingsHeadLayout() {
             modifier, memos.fastSumBy { it.note.noteTitle?.length ?: (0 + it.note.content.length) }.toString(), R.string.characters.str
         )
         boxText(
-             modifier, memos.map { it.note.createTime.toYYMMDD() }.toSet().size.toString(), R.string.dyas.str
+            modifier, memos.map { it.note.createTime.toYYMMDD() }.toSet().size.toString(), R.string.dyas.str
         )
 
         boxText(

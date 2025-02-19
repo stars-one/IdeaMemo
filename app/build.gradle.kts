@@ -16,8 +16,8 @@ android {
         applicationId = "com.ldlywt.note"
         minSdk = 26
         targetSdk = 35
-        versionCode = 205
-        versionName = "2.0.5"
+        versionCode = 206
+        versionName = "2.0.6"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -160,28 +160,16 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.retrofit)
 
-//    implementation("com.google.code.gson:gson:2.8.5")
-//    implementation("com.squareup.okhttp3:okhttp:4.10.0")
-//    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-
-//    implementation("com.tencent.bugly:crashreport:4.1.9.1")
     implementation("org.zeroturnaround:zt-zip:1.15")
-//    implementation("org.slf4j:slf4j-api:1.7.36")
     implementation("com.github.thegrizzlylabs:sardine-android:0.8")
-    implementation("com.github.ireward:compose-html:1.0.2")
-//    implementation("androidx.datastore:datastore-preferences:1.0.0")
 
-//    implementation("com.caverock:androidsvg-aar:1.4")
-//    implementation("io.coil-kt:coil:2.6.0")
-//    implementation("io.coil-kt:coil-compose:2.6.0")
-//    implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("com.github.SmartToolFactory:Compose-Screenshot:1.0.3")
     implementation("com.kizitonwose.calendar:compose:2.6.0")
     implementation("io.github.moriafly:salt-ui:2.0.0")
     // Kotlin
     implementation("androidx.biometric:biometric:1.4.0-alpha02")
 
-    var markwon_version = "4.6.2"
+    val markwon_version = "4.6.2"
 
     implementation ("io.noties.markwon:core:$markwon_version")
     implementation ("io.noties.markwon:ext-strikethrough:$markwon_version")

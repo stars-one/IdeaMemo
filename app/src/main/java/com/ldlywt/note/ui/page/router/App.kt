@@ -19,7 +19,6 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.ldlywt.note.ui.page.PictureDisplayPage
 import com.ldlywt.note.ui.page.search.SearchPage
-import com.ldlywt.note.ui.page.StartupPage
 import com.ldlywt.note.ui.page.data.DataCloudConfigPage
 import com.ldlywt.note.ui.page.data.DataManagerPage
 import com.ldlywt.note.ui.page.input.MemoInputPage
@@ -97,15 +96,10 @@ val LocalRootNavController = compositionLocalOf<NavHostController> { error("Not 
 fun NavHostContainer(
     navController: NavHostController,
 ) {
-    val context = LocalContext.current
-    val firstLaunch by SettingsPreferences.firstLaunch.collectAsState(false)
     NavHost(
         navController,
-        startDestination = if (firstLaunch) Screen.Startup else Screen.Main,
+        startDestination = Screen.Main,
     ) {
-        composable<Screen.Startup>{
-            StartupPage(navHostController = navController)
-        }
         composable<Screen.Explore> {
             ExplorePage(navHostController = navController)
         }

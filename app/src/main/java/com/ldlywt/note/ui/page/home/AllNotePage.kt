@@ -15,8 +15,6 @@ import androidx.compose.material.icons.outlined.FilterList
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material.icons.outlined.Tag
 import androidx.compose.material.icons.rounded.Edit
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -39,36 +37,20 @@ import androidx.navigation.NavHostController
 import com.ldlywt.note.R
 import com.ldlywt.note.component.NoteCard
 import com.ldlywt.note.component.RYScaffold
-import com.ldlywt.note.utils.lunchMain
 import com.ldlywt.note.preferences
 import com.ldlywt.note.state.NoteState
-import com.ldlywt.note.ui.page.router.Screen
-import com.ldlywt.note.utils.str
 import com.ldlywt.note.ui.page.LocalMemosState
 import com.ldlywt.note.ui.page.LocalMemosViewModel
 import com.ldlywt.note.ui.page.NoteViewModel
 import com.ldlywt.note.ui.page.SortTime
 import com.ldlywt.note.ui.page.input.ChatInput
+import com.ldlywt.note.ui.page.router.Screen
+import com.ldlywt.note.utils.FirstTimeWarmDialog
 import com.ldlywt.note.utils.SettingsPreferences
+import com.ldlywt.note.utils.lunchMain
+import com.ldlywt.note.utils.str
 import com.moriafly.salt.ui.SaltTheme
 import kotlinx.coroutines.flow.first
-
-@Composable
-fun FirstTimeWarmDialog(block: () -> Unit) {
-    AlertDialog(
-        containerColor = SaltTheme.colors.background,
-        onDismissRequest = { },
-        title = { Text(stringResource(R.string.warm_reminder), color = SaltTheme.colors.text) },
-        text = { Text(stringResource(id = R.string.warm_reminder_desc), color = SaltTheme.colors.text) },
-        confirmButton = {
-            Button(onClick = {
-                block()
-            }) {
-                Text("OK")
-            }
-        }
-    )
-}
 
 @Composable
 fun AllNotesPage(
@@ -145,12 +127,12 @@ fun AllNotesPage(
         })
 
     if (showWarnDialog) {
-        FirstTimeWarmDialog {
+        FirstTimeWarmDialog(block = {
             lunchMain {
                 SettingsPreferences.changeFirstLaunch(false)
                 showWarnDialog = false
             }
-        }
+        })
     }
 
 
@@ -203,7 +185,7 @@ fun HomeFilterBottomSheet(show: Boolean, onDismissRequest: () -> Unit, onConfirm
     var sortTime by rememberSaveable { mutableStateOf(preferences.sortTime) }
 
     if (show) {
-        ModalBottomSheet(onDismissRequest = onDismissRequest) {
+        ModalBottomSheet(onDismissRequest = onDismissRequest, containerColor = SaltTheme.colors.subBackground) {
             Column(Modifier.fillMaxWidth()) {
                 TextButton(modifier = Modifier.fillMaxWidth(), onClick = {
                     sortTime = SortTime.UPDATE_TIME_DESC.name
@@ -216,7 +198,7 @@ fun HomeFilterBottomSheet(show: Boolean, onDismissRequest: () -> Unit, onConfirm
                             .fillMaxWidth()
                             .padding(start = 24.dp, end = 24.dp), verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(text = stringResource(R.string.update_time_desc))
+                        Text(text = stringResource(R.string.update_time_desc), color = SaltTheme.colors.text)
                         Spacer(modifier = Modifier.weight(1f))
                         Checkbox(checked = sortTime == SortTime.UPDATE_TIME_DESC.name, null)
                     }
@@ -232,7 +214,7 @@ fun HomeFilterBottomSheet(show: Boolean, onDismissRequest: () -> Unit, onConfirm
                             .fillMaxWidth()
                             .padding(start = 24.dp, end = 24.dp), verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(text = stringResource(R.string.update_time_asc))
+                        Text(text = stringResource(R.string.update_time_asc), color = SaltTheme.colors.text)
                         Spacer(modifier = Modifier.weight(1f))
                         Checkbox(checked = sortTime == SortTime.UPDATE_TIME_ASC.name, null)
                     }
@@ -248,7 +230,7 @@ fun HomeFilterBottomSheet(show: Boolean, onDismissRequest: () -> Unit, onConfirm
                             .fillMaxWidth()
                             .padding(start = 24.dp, end = 24.dp), verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(text = stringResource(R.string.create_time_desc))
+                        Text(text = stringResource(R.string.create_time_desc), color = SaltTheme.colors.text)
                         Spacer(modifier = Modifier.weight(1f))
                         Checkbox(checked = sortTime == SortTime.CREATE_TIME_DESC.name, null)
                     }
@@ -264,7 +246,7 @@ fun HomeFilterBottomSheet(show: Boolean, onDismissRequest: () -> Unit, onConfirm
                             .fillMaxWidth()
                             .padding(start = 24.dp, end = 24.dp), verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(text = stringResource(R.string.create_time_asc))
+                        Text(text = stringResource(R.string.create_time_asc), color = SaltTheme.colors.text)
                         Spacer(modifier = Modifier.weight(1f))
                         Checkbox(checked = sortTime == SortTime.CREATE_TIME_ASC.name, null)
                     }
