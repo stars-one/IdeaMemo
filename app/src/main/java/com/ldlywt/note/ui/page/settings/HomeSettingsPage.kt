@@ -5,6 +5,7 @@ package com.ldlywt.note.ui.page.settings
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import com.ldlywt.note.utils.toYYMMDD
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -69,12 +70,15 @@ import com.moriafly.salt.ui.UnstableSaltApi
 import com.moriafly.salt.ui.popup.PopupMenuItem
 import com.moriafly.salt.ui.popup.rememberPopupState
 import kotlinx.coroutines.launch
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.statusBarsPadding
+
 
 @Composable
 fun SettingsPage(
     navController: NavHostController
 ) {
-    RYScaffold(title = null, navController = null) {
+    Column(modifier = Modifier.fillMaxSize().statusBarsPadding()) {
         Spacer(modifier = Modifier.height(12.dp))
         Column {
             Text(
@@ -289,7 +293,7 @@ fun SettingsHeadLayout() {
             modifier, memos.fastSumBy { it.note.noteTitle?.length ?: (0 + it.note.content.length) }.toString(), R.string.characters.str
         )
         boxText(
-            modifier, memos.count { !it.note.isHide }.toString(), R.string.dyas.str
+             modifier, memos.map { it.note.createTime.toYYMMDD() }.toSet().size.toString(), R.string.dyas.str
         )
 
         boxText(
